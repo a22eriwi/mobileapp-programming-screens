@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-
+    Intent Bertil;
     private Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,10 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, SecondActivity.class));
+                Bertil = new Intent(MainActivity.this, SecondActivity.class);
+                Bertil.putExtra("name", "Herberta"); // Optional
+                Bertil.putExtra("number", 55); // Optional
+                startActivity(Bertil);
             }
         });
     }
